@@ -1,3 +1,10 @@
-<p>
-  graficas1 works!
-</p>
+<div class="row">
+    <div class="col-6" *ngFor="let grafico of objectKeys(graficos); let i of index">
+        <div class="card">
+            <div class="card-body">
+                <!-- {{graficos[i].data}} -->
+                <app-grafico-dona [leyenda]="graficos[i].leyenda" [doughnutChartData]="graficos[i].data" [doughnutChartLabels]="graficos[i].labels" [doughnutChartType]="graficos[i].type"></app-grafico-dona>
+            </div>
+        </div>
+    </div>
+</div>

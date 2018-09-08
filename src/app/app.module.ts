@@ -5,7 +5,9 @@ import { NgModule } from '@angular/core';
 import { APP_ROUTES } from './app.routes';
 
 // Modules
+import { FormsModule } from '@angular/forms';
 import { PagesModule } from './pages/pages.module';
+
 
 // Components
 import { AppComponent } from './app.component';
@@ -21,6 +23,7 @@ import { RegisterComponent } from './login/register.component';
   imports: [
     BrowserModule,
     PagesModule,
+    FormsModule,
     APP_ROUTES
   ],
   providers: [],
