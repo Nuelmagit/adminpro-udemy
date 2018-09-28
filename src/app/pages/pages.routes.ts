@@ -5,6 +5,7 @@ import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { LoginGuard } from '../services/services.index';
+import { ProfileComponent } from './profile/profile.component';
 
 const pagesRoutes: Routes = [
     {path: '',
@@ -16,6 +17,7 @@ const pagesRoutes: Routes = [
             {path: 'progress', component: ProgressComponent, data: {titulo: 'Progreso'}},
             {path: 'grafica1', component: Graficas1Component, data: {titulo: 'Graficas'}},
             {path: 'accountSetting', component: AccountSettingsComponent, data: {titulo: 'Account'}},
+            {path: 'profile', component: ProfileComponent, data: {titulo: 'Perfil'}},
             {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
         ]},
 ];

@@ -8,9 +8,13 @@ import { UsuarioService } from '../../services/usuario/usuario.service';
 })
 export class HeaderComponent implements OnInit {
 
+  public usuario;
+
   constructor(public _usuarioService: UsuarioService) { }
 
   ngOnInit() {
+
+    this.usuario = this._usuarioService.usuario;
   }
 
 }
