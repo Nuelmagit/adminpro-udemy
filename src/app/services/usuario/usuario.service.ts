@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICES } from '../../config/config';
-import { map } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
 
@@ -87,12 +87,14 @@ export class UsuarioService {
 
 
   actualizarUsuario(usuario: Usuario) {
-    let url = URL_SERVICES + '/usuario/' + this.usuario._id;
+    let url = URL_SERVICES + '/usuario/' + usuario._id;
 
     url += '?token=' + this.token;
     return this.http.put(url, usuario).pipe( map( (resp: any) => {
-      this.usuario = resp.usuario;
-      this.guardarStorage(resp.usuario_id, this.token, resp.usuario);
+      if (usuario._id === this.usuario._id) {
+        this.guardarStorage(resp.usuario_id, this.token, resp.usuario);
+      }
+
       swal('Usuario Actualizado', usuario.nombre, 'success');
       return true;
     }));
@@ -110,4 +112,24 @@ export class UsuarioService {
       console.log(resp);
     });
   }
+
+  cargarUsuarios(desde: number = 0) {
+    const url = URL_SERVICES + '/usuario?desde=' + desde;
+
+    return this.http.get(url);
+  }
+
+  buscarUsuario(termino: String) {
+    const url = URL_SERVICES + '/busqueda/coleccion/usuarios/' + termino;
+
+    return this.http.get(url).pipe( map( (resp: any) => resp.usuarios ) );
+  }
+
+  borrarUsuario(usuario: Usuario) {
+    const url = URL_SERVICES + '/usuario/' + usuario._id + '?token=' + this.token;
+
+    return this.http.delete(url).pipe ( map( (resp: any) => resp.usuario ) );
+
+  }
+
 }

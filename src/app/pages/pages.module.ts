@@ -19,6 +19,8 @@ import { GraficoDonaComponent } from './../components/grafico-dona/grafico-dona.
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { ProfileComponent } from './profile/profile.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ModalUploadComponent } from './modal-upload/modal-upload.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +31,9 @@ import { ProfileComponent } from './profile/profile.component';
         IncrementadorComponent,
         GraficoDonaComponent,
         AccountSettingsComponent,
-        ProfileComponent
+        ProfileComponent,
+        UsuariosComponent,
+        ModalUploadComponent
     ],
     exports: [
         DashboardComponent,
