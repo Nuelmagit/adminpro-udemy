@@ -89,9 +89,9 @@ export class UsuariosComponent implements OnInit {
       },
     }).then((borrar) => {
       if (borrar) {
-        this._usuarioService.borrarUsuario(usuario).subscribe( ( usuario: Usuario ) => {
+        this._usuarioService.borrarUsuario(usuario).subscribe( ( usuarioDelete: Usuario ) => {
           this.cargarUsuarios();
-          swal('Bien!', `Usuario ${ usuario.nombre } eliminado correctamente.`, 'success');
+          swal('Bien!', `Usuario ${ usuarioDelete.nombre } eliminado correctamente.`, 'success');
         });
       }
     });
