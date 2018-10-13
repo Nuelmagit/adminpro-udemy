@@ -63,6 +63,9 @@ export class LoginComponent implements OnInit {
 
     this.usuarioService.login(usuario, this.recuerdame).subscribe( data => {
          this.router.navigate(['/dashboard']);
+    }, (err: any) => {
+      console.log(err);
+      swal('Ops!', `${err.mensje}`, 'error');
     });
   }
 
