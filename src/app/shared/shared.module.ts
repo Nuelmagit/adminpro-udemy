@@ -7,6 +7,7 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { HeaderComponent } from './header/header.component';
 import { BreadcrumsComponent } from './breadcrums/breadcrums.component';
 import { PipesModule } from '../pipes/pipes.module';
+import { ModalUploadComponent } from '../pages/modal-upload/modal-upload.component';
 
 
 @NgModule({
@@ -19,13 +20,15 @@ import { PipesModule } from '../pipes/pipes.module';
         SidebarComponent,
         NopagefoundComponent,
         HeaderComponent,
-        BreadcrumsComponent
+        BreadcrumsComponent,
+        ModalUploadComponent
     ],
     exports: [
         SidebarComponent,
         NopagefoundComponent,
         HeaderComponent,
-        BreadcrumsComponent
+        BreadcrumsComponent,
+        ModalUploadComponent
     ],
 })
 export class SharedModule {}

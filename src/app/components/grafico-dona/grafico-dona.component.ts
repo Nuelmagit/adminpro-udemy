@@ -17,4 +17,12 @@ export class GraficoDonaComponent implements OnInit {
   ngOnInit() {
   }
 
+  chartHovered(event: any) {
+
+  }
+
+  chartClicked(event: any) {
+
+  }
+
 }

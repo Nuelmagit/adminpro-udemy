@@ -10,7 +10,7 @@ import { Title, Meta, MetaDefinition } from '@angular/platform-browser';
 })
 export class BreadcrumsComponent implements OnInit {
 
-  private titulo: string;
+  public titulo: string;
 
   constructor(private router: Router, private tittle: Title, private meta: Meta) {
     this.getDataRoute().subscribe(data => {
